@@ -1,0 +1,56 @@
+.container{
+  padding: 30rpx;
+}
+.user-info{
+  display: flex;
+  height: 220rpx;
+  border-bottom: 1rpx solid #DCDCDC;
+}
+.userInfo-image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-left: 10rpx;
+}
+.userInfo-name{
+  font-size: 36rpx;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+  margin-left: 30rpx;
+}
+.userInfo-edit{
+  width: 40rpx;
+  height: 40rpx;
+}
+.my-list{
+  padding: 50rpx 0 30rpx 15rpx;
+  border-bottom: 1rpx solid #DCDCDC;
+}
+.my-item{
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+}
+.item-icon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+}
+.item-name{
+  font-size: 35rpx;
+  color: #666;
+  letter-spacing: 2rpx;
+  flex: 1;
+}
+.item-arrow{
+  font-size: 34rpx;
+  color: rgb(212, 211, 211);
+}
+.item-state{
+  font-size: 28rpx;
+  color: rgb(182, 178, 178);
+  margin-right: 20rpx;
+}
+.my-state{
+  padding: 30rpx 0 0 15rpx;
+}

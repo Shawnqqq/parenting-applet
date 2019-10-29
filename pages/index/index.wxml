@@ -1,0 +1,58 @@
+<view class="container">
+  <swiper class="swiper-container"
+    indicator-dots
+    indicator-color="rgba(245, 255, 250, 0.4)"
+    indicator-active-color="#fff"
+    autoplay
+    circular
+    >
+    <swiper-item>
+      <view class="swiper-item"></view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-item two"></view>
+    </swiper-item>
+  </swiper>
+  <scroll-view class="album"
+    scroll-x="true"
+    enable-flex="true">
+    <view class="album-item">本周热议话题</view>
+    <view class="album-item">孕期必看话题</view>
+    <view class="album-item">0~6月精华帖</view>
+    <view class="album-item">巴拉巴拉</view>
+  </scroll-view>
+  <view class="topic-container">
+    <view class="topic-tab">
+      <view class="topic-recomme active">推荐</view>
+      <view class="topic-answer">答题</view>
+      <view class="topic-tab-tips">全部话题</view>
+    </view>
+    <scroll-view class="recomme-container">
+      <view class="topic-item">
+        <view class="topic-title">有哪些养过孩子的人都知道，但没养过孩子的人不知道的事件？</view>
+        <view class="topic-content">生娃之前不想要娃....两个人过着多好呀，想吃吃想玩玩，多晚回家都可以，为什么要生娃？？养孩子好贵带孩子好累生孩子好痛苦，
+        我为什么要生？？？生出来老公更爱孩子不爱我怎么办？有可能地位不保啊。。孩子生出来谁带？我可不想带（扔给婆婆吧）巴拉巴拉把巴拉巴拉的</view>
+        <view class="topic-user">
+          <image class="user-avatar" src="https://wx.qlogo.cn/mmopen/vi_32/ABFib3UEib8Y1qPPibL8cG9MzAsVmIjzBmQAhI6r8ibwqOciaCgTfhXNia8h3HGag6gKd1iccUnoPIFicLtJcpojFeqhlA/132"></image>
+          <view class="user-name">亚提密斯</view>
+          <view class="topic-follow">12 关注</view>
+          <view class="topic-reply">72 回答</view>
+        </view>
+      </view>
+      <view class="topic-item">
+        <view class="topic-title">有哪些养过孩子的人都知道，但没养过孩子的人不知道的事件？</view>
+        <view class="topic-content">生娃之前不想要娃....两个人过着多好呀，想吃吃想玩玩，多晚回家都可以，为什么要生娃？？养孩子好贵带孩子好累生孩子好痛苦，
+        我为什么要生？？？生出来老公更爱孩子不爱我怎么办？有可能地位不保啊。。孩子生出来谁带？我可不想带（扔给婆婆吧）巴拉巴拉把巴拉巴拉的</view>
+        <view class="topic-user">
+          <image class="user-avatar" src="https://wx.qlogo.cn/mmopen/vi_32/ABFib3UEib8Y1qPPibL8cG9MzAsVmIjzBmQAhI6r8ibwqOciaCgTfhXNia8h3HGag6gKd1iccUnoPIFicLtJcpojFeqhlA/132"></image>
+          <view class="user-name">亚提密斯</view>
+          <view class="topic-follow">12 关注</view>
+          <view class="topic-reply">72 回答</view>
+        </view>
+      </view>
+    </scroll-view>
+    <scroll-view class="answer-container">
+
+    </scroll-view>
+  </view>
+</view>
