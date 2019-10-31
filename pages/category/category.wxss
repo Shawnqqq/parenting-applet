@@ -1,0 +1,27 @@
+.swiper-tab-list{
+  display: flex;
+  border-bottom: 1px solid #cdcdcd;
+  height: 100rpx;
+}
+.swiper-tab-item{
+  font-size: 32rpx;
+  color:#999;
+  line-height: 100rpx;
+  margin: 0 30rpx;
+  flex: none;
+  position: relative;
+}
+.swiper-tab-item.active{
+  color: #000;
+  font-weight: 600;
+}
+.swiper-tab-item.active::after{
+  content: '';
+  position: absolute;
+  bottom: 10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50rpx;
+  height: 8rpx;
+  background-color:#FF8C00;
+}

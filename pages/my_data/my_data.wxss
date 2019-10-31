@@ -1,0 +1,27 @@
+.container{
+  font-size: 35rpx;
+  color: #777;
+}
+.avatar{
+  border-top: 20rpx solid #F5F5F5;
+  border-bottom: 20rpx solid #F5F5F5;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+}
+.my-item{
+  display: flex;
+  align-items: center;
+  height: 120rpx;
+  padding-left: 30rpx;
+  border-bottom: 1rpx solid #DCDCDC;
+}
+.my-item-title{
+  flex: 1;
+}
+.my-item-text{
+  font-size: 30rpx;
+  color: #555;
+  padding-right: 30rpx;
+}

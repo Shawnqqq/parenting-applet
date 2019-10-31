@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="swiper-tab">
+    <scroll-view scroll-x class="swiper-tab-list"
+    scroll-with-animation
+    enable-flex
+    scroll-into-view="swiper-tab-item-{{swiperTabIndex}}">
+      <view id="swiper-tab-item-0 "
+      class="swiper-tab-item {{swiperTabIndex===0 ? 'active' : none}}"
+      bindtap="getAll"
+      >全部</view>
+      <view id="swiper-tab-item-{{item.id}}"
+      class="swiper-tab-item {{swiperTabIndex===item.id ? 'active' : none}}"
+      wx:for="{{category}}"
+      wx:key="{{item.id}}"
+      data-id="{{item.id}}"
+      bindtap="getData"
+      >{{item.name}}</view>
+    </scroll-view>
+  </view>
+  <view class="category-content">
+    <topics topicData="{{topicData}}"></topics>
+  </view>
+</view>

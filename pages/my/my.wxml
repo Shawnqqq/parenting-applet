@@ -1,9 +1,9 @@
 <view class="container">
   <view class="user-info">
     <image class="userInfo-image" src="{{userInfo.avatarUrl}}"></image>
-    <view class="userInfo-name">{{userInfo.nickName}}
+    <navigator class="userInfo-name" url="/pages/my_data/my_data?id={{user_id}}">{{userInfo.nickName}}
       <image class="userInfo-edit" src="../../image/user-edit.png"></image>
-    </view>
+    </navigator>
   </view>
   <view class="my-list">
     <view class="my-item">

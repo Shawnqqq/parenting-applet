@@ -23,36 +23,15 @@
   </scroll-view>
   <view class="topic-container">
     <view class="topic-tab">
-      <view class="topic-recomme active">推荐</view>
-      <view class="topic-answer">答题</view>
-      <view class="topic-tab-tips">全部话题</view>
+      <view class="topic-recomme {{recomme ? 'active' : none}}" bindtap="handleRecomme">推荐</view>
+      <view class="topic-answer {{recomme ? none : 'active'}}" bindtap="handleAnswer">答题</view>
+      <navigator class="topic-tab-tips" url="/pages/category/category?id=0">全部话题</navigator>
     </view>
-    <scroll-view class="recomme-container">
-      <view class="topic-item">
-        <view class="topic-title">有哪些养过孩子的人都知道，但没养过孩子的人不知道的事件？</view>
-        <view class="topic-content">生娃之前不想要娃....两个人过着多好呀，想吃吃想玩玩，多晚回家都可以，为什么要生娃？？养孩子好贵带孩子好累生孩子好痛苦，
-        我为什么要生？？？生出来老公更爱孩子不爱我怎么办？有可能地位不保啊。。孩子生出来谁带？我可不想带（扔给婆婆吧）巴拉巴拉把巴拉巴拉的</view>
-        <view class="topic-user">
-          <image class="user-avatar" src="https://wx.qlogo.cn/mmopen/vi_32/ABFib3UEib8Y1qPPibL8cG9MzAsVmIjzBmQAhI6r8ibwqOciaCgTfhXNia8h3HGag6gKd1iccUnoPIFicLtJcpojFeqhlA/132"></image>
-          <view class="user-name">亚提密斯</view>
-          <view class="topic-follow">12 关注</view>
-          <view class="topic-reply">72 回答</view>
-        </view>
-      </view>
-      <view class="topic-item">
-        <view class="topic-title">有哪些养过孩子的人都知道，但没养过孩子的人不知道的事件？</view>
-        <view class="topic-content">生娃之前不想要娃....两个人过着多好呀，想吃吃想玩玩，多晚回家都可以，为什么要生娃？？养孩子好贵带孩子好累生孩子好痛苦，
-        我为什么要生？？？生出来老公更爱孩子不爱我怎么办？有可能地位不保啊。。孩子生出来谁带？我可不想带（扔给婆婆吧）巴拉巴拉把巴拉巴拉的</view>
-        <view class="topic-user">
-          <image class="user-avatar" src="https://wx.qlogo.cn/mmopen/vi_32/ABFib3UEib8Y1qPPibL8cG9MzAsVmIjzBmQAhI6r8ibwqOciaCgTfhXNia8h3HGag6gKd1iccUnoPIFicLtJcpojFeqhlA/132"></image>
-          <view class="user-name">亚提密斯</view>
-          <view class="topic-follow">12 关注</view>
-          <view class="topic-reply">72 回答</view>
-        </view>
-      </view>
+    <scroll-view class="recomme-container" hidden="{{!recomme}}">
+      <topics topicData="{{recommeData}}"></topics>
     </scroll-view>
-    <scroll-view class="answer-container">
-
+    <scroll-view class="answer-container" hidden="{{recomme}}">
+      <topics topicData="{{answerData}}"></topics>
     </scroll-view>
   </view>
 </view>

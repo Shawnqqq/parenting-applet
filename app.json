@@ -1,13 +1,18 @@
 {
   "pages": [
+    "pages/category/category",
+    "pages/topic/topic",
     "pages/index/index",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/my_data/my_data",
+    "components/topicItem/topicItem"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "parenting",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance":100
   },
   "tabBar": {
     "color": "#cdcdce",

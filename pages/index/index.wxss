@@ -25,15 +25,16 @@
   height: 120rpx;
   font-size: 40rpx;
   color: #777;
-  font-weight: 600;
 }
 .topic-recomme{
   margin: 0 30rpx;
   position: relative;
+  font-weight: 600;
 }
 .topic-answer{
   flex: 1;
   position: relative;
+  font-weight: 600;
 }
 .topic-recomme.active,.topic-answer.active{
   color:#000;
@@ -57,7 +58,7 @@
   box-sizing: border-box;
 }
 .topic-item{
-  padding: 30rpx;
+  padding: 40rpx 0;
   border-bottom: 1rpx solid #DCDCDC;
 }
 .topic-title{

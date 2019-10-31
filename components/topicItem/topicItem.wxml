@@ -1,0 +1,15 @@
+<view class="topic-list">
+  <navigator class="topic-item"
+    wx:for="{{topicData}}"
+    wx:key="{{item.id}}"
+    url="/pages/topic/topic?id={{item.id}}">
+    <view class="topic-title">{{item.title}}</view>
+    <text class="topic-content" wx:if="{{item.text !== null}}">{{item.text}}</text>
+    <view class="topic-user">
+      <image class="user-avatar" src="{{item.avatar}}"></image>
+      <view class="user-name">{{item.nick_name === null? '' : item.nick_name}}</view>
+      <view class="topic-follow">{{item.follow}} 关注</view>
+      <view class="topic-reply">{{item.answer_num}} 回答</view>
+    </view>
+  </navigator>
+</view>

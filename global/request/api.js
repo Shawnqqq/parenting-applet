@@ -11,11 +11,6 @@ export default {
   MODE: MODE,
   version: VERSION,
   login: `${PREFIX}/wxauth/login`,
-  // todo: `${PREFIX}/todo`,
-  // honor: `${PREFIX}/honor`,
-  // okr: `${PREFIX}/okr`,
-  // okrSingle: `${PREFIX}/okrSingle`,
-  // todoKeyresult: `${PREFIX}/todoKeyresult`,
-  // okrTodo: `${PREFIX}/okrTodo`,
-  // kr: `${PREFIX}/kr`
+  category: `${PREFIX}/wxcategory`,
+  wxTopic: `${PREFIX}/wxTopic`
 }

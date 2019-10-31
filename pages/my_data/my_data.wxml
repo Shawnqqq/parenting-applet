@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="avatar">修改头像</view>
+  <view class="my-item">
+    <view class="my-item-title">昵称</view>
+    <view class="my-item-text">亚提密斯 ></view>
+  </view>
+  <view class="my-item">
+    <view class="my-item-title">性别</view>
+    <view class="my-item-text">男 ></view>
+  </view>
+</view>
