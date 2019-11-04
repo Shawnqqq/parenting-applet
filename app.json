@@ -1,18 +1,21 @@
 {
   "pages": [
-    "pages/category/category",
-    "pages/topic/topic",
     "pages/index/index",
+    "pages/created/created",
+    "pages/category/category",
+    "pages/answer/answer",
+    "pages/topic/topic",
     "pages/my/my",
     "pages/my_data/my_data",
-    "components/topicItem/topicItem"
+    "components/topicItem/topicItem",
+    "components/answerItem/answerItem"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "parenting",
     "navigationBarTextStyle": "black",
-    "onReachBottomDistance":100
+    "onReachBottomDistance": 50
   },
   "tabBar": {
     "color": "#cdcdce",

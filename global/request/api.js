@@ -12,5 +12,14 @@ export default {
   version: VERSION,
   login: `${PREFIX}/wxauth/login`,
   category: `${PREFIX}/wxcategory`,
-  wxTopic: `${PREFIX}/wxTopic`
+  wxTopic: `${PREFIX}/wxTopic`,
+  wxTopiPv: `${PREFIX}/wxTopiPv`,
+  wxPraise: `${PREFIX}/wxPraise`,
+  wxUnPraise: `${PREFIX}/wxUnPraise`,
+  wxTopicTitle: `${PREFIX}/wxTopicTitle`,
+  wxAnswer: `${PREFIX}/wxAnswer`,
+  wxCollect: `${PREFIX}/wxCollect`,
+  wxUnCollect: `${PREFIX}/wxUnCollect`,
+  wxReply: `${PREFIX}/wxReply`,
+  qiniu: `${PREFIX}/qiniu`
 }

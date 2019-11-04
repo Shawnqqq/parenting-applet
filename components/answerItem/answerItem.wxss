@@ -1,0 +1,47 @@
+.answer-item{
+  padding: 30rpx;
+  border-bottom: 20rpx solid #F5F5F5;
+}
+.user-info{
+  display: flex;
+  margin-bottom: 40rpx;
+}
+.user-info-avatar{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+.user-info-name{
+  font-size: 32rpx;
+  color: #000;
+  margin-left: 20rpx;
+}
+.answer-content{
+  height: 200rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.answer-text{
+  height: 50rpx;
+  font-size: 32rpx;
+  color: #777;
+}
+.answer-handle{
+  display: flex;
+  margin: 20rpx 0;
+  justify-content: flex-end;
+}
+.answer-reply{
+  display: flex;
+}
+.reply-logo{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 40rpx;
+}
+.reply-number{
+  font-size: 30rpx;
+  color: #777;
+  line-height: 50rpx;
+  margin: 0 6rpx;
+}

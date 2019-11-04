@@ -1,0 +1,69 @@
+<view class="container">
+  <view class="topic-title">{{answerData.title}}</view>
+  <view class="answer-handle">
+    <navigator class="answer-all" url="/pages/topic/topic?id={{answerData.topic_id}}">全部 {{answerData.answer_num}} 条回答 ></navigator >
+    <navigator class="answer-send" url="/pages/created/created?id={{answerData.topic_id}}">发布回答</navigator>
+  </view>
+  <view class="user-container">
+    <image class="user-avatar" src="{{answerData.avatar}}"></image>
+    <view class="user-name">{{answerData.nick_name}}</view>
+  </view>
+  <editor class="answer-text"
+    id="editor-single"
+    read-only 
+    bindready="onEditorReady">
+  </editor>
+  <view class="answer-time">编辑于 {{answerData.create_time}}</view>
+  <view class="answer-footer">
+    <view class="answer-praise" 
+      bindtap="{{answerData.praiseActive ? 'handleUnpraise' : 'handlePraise'}}"
+      data-id="{{answerData.answer_id}}"
+      >
+      <image class="answer-tips" wx:if="{{!answerData.praiseActive}}" src="../../image/praise.png"></image>
+      <image class="answer-tips" wx:else src="../../image/praise-active.png"></image>
+      <view class="answer-num">{{answerData.praise}}</view>
+    </view>
+    <view class="answer-praise"
+      bindtap="{{answerData.collectActive ? 'handleUnCollect' : 'handleCollect'}}"
+      data-id="{{answerData.answer_id}}">
+      <image class="answer-collect-tips" wx:if="{{!answerData.collectActive}}" src="../../image/collect.png"></image>
+      <image class="answer-collect-tips" wx:else src="../../image/collect-active.png"></image>
+      <view class="answer-num">{{answerData.collect}}</view>
+    </view>
+  </view>
+  <view class="reply-container">
+    <view class="reply-title">最新评论</view>
+    <block wx:if="{{replyActive}}">
+      <view class="reply-item"
+        wx:for="{{replyShow}}"
+        wx:key="{{item.id}}">
+        <image class="user-avatar" src="{{item.avatar}}"></image>
+        <view class="reply-content">
+          <view class="reply-user-name">{{item.nick_name}}</view>
+          <view class="reply-time">{{item.create_time}}</view>
+          <text class="reply-text">{{item.text}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="reply-item"
+        wx:for="{{replyData}}"
+        wx:key="{{item.id}}">
+        <image class="user-avatar" src="{{item.avatar}}"></image>
+        <view class="reply-content">
+          <view class="reply-user-name">{{item.nick_name}}</view>
+          <view class="reply-time">{{item.create_time}}</view>
+          <text class="reply-text">{{item.text}}</text>
+        </view>
+      </view>
+    </block>
+    <view class="reply-more" bindtap="handleAll">查看全部({{replyData.length}})</view>
+    <view class="reply-send">
+      <input class="reply-input"
+      placeholder="谢谢你那么好看还给我评论~"
+      placeholder-style="color:#C0C0C0"
+      bindinput="handleInput"></input>
+      <view class="{{sendActive ? 'reply-btn active' : 'reply-btn'}}" bindtap="handleSend">发送</view>
+    </view>
+  </view>
+</view>

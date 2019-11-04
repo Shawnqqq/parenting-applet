@@ -17,8 +17,8 @@
     scroll-x="true"
     enable-flex="true">
     <view class="album-item">本周热议话题</view>
+    <navigator class="album-item" url="/pages/category/category?id=0">全部分类</navigator>
     <view class="album-item">孕期必看话题</view>
-    <view class="album-item">0~6月精华帖</view>
     <view class="album-item">巴拉巴拉</view>
   </scroll-view>
   <view class="topic-container">

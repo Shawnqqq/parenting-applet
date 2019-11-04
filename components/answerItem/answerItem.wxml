@@ -1,0 +1,27 @@
+<view class="answer-list">
+  <view class="answer-item"
+    wx:for="{{answerData}}"
+    wx:key="{{item.id}}">
+    <view class="user-info">
+      <image class="user-info-avatar" src="{{item.avatar}}"></image>
+      <view class="user-info-name">{{item.nick_name}}</view>
+    </view>
+    <navigator class="answer-content" url="/pages/answer/answer?id={{item.id}}">
+      <text class="answer-text">{{item.text}}</text>
+    </navigator>
+    <view class="answer-handle">
+      <view class="answer-reply">
+        <image class="reply-logo" src="../../image/reply.png"></image>
+        <view class="reply-number">{{item.replyTotal}}</view>
+      </view>
+      <view class="answer-reply"
+        data-id="{{item.id}}"
+        data-index="{{index}}"
+        bindtap="{{item.active ? 'handleUnpraise' : 'handlePraise'}}">
+        <image wx:if="{{!item.active}}" class="reply-logo" src="../../image/praise.png"></image>
+        <image wx:else class="reply-logo" src="../../image/praise-active.png"></image>
+        <view class="reply-number">{{item.praise}}</view>
+      </view>
+    </view>
+  </view>
+</view>

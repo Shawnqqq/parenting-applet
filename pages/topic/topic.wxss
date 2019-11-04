@@ -1,3 +1,8 @@
+.container{
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
+}
 .topic-container{
   background-color: #F5F5F5;
   position: relative;
@@ -109,4 +114,20 @@
   color: #777;
   line-height: 50rpx;
   margin: 0 6rpx;
+}
+.send-answer{
+  position: fixed;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: 100rpx;
+  border-radius: 50rpx;
+  background-color: #FF7F50;
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: 600;
+  line-height: 100rpx;
+  text-align: center;
+  letter-spacing: 3rpx;
 }

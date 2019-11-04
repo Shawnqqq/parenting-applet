@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "话题详情"
+  "navigationBarTitleText": "话题详情",
+  "usingComponents": {
+    "answer": "/components/answerItem/answerItem"
+  }
 }

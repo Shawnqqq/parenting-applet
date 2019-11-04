@@ -1,36 +1,92 @@
 import API from '../../global/request/api.js'
+const app = getApp()
 
 Page({
   data: {
     topicData:{},
     answerData:[],
-    editorId: []
+    nowPage:0,
+    optionsId:''
   },
   onLoad: function (options) {
+    this.handlePv(options.id)
     this.getData(options.id)
+    this.setData({
+      optionsId:options.id
+    })
   },
-  onEditorReady() {
-    this.data.editorId.forEach((data,index)=>{
-      wx.createSelectorQuery().select(data).context((res) => {
-        res.context.setContents({
-          html: this.data.answerData[index].text
+  handlePv(id){
+    wx.request({
+      url: API.wxTopiPv,
+      method: 'PUT',
+      data:{id}
+    })
+  },
+  handleFollow(){
+    let topic_id = this.data.optionsId
+    let user_id = app.globalData.user_id
+    wx.request({
+      url: API.wxTopic,
+      method: 'POST',
+      data: {topic_id,user_id},
+      success:res=>{
+        wx.showToast({
+          title: res.data.message,
+          icon: 'none',
+          duration: 2000
         })
-      }).exec()
+      }
     })
   },
   getData(id){
+    let user_id = app.globalData.user_id
     wx.request({
       url: API.wxTopic+'/'+id,
+      data: { nowPage: this.data.nowPage, user_id},
       success:res=>{
-        let editorId = res.data.answer.map((data,index)=>{
-          return `#answer-editor-${index}`
+        if (!res.data.answer.length) {
+          wx.showToast({
+            title: '没有更多内容了',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+        res.data.answer.forEach(data => {
+          data.text ? data.text = data.text.replace(/<\/?.+?>/g, "") : ''
         })
+        let answerData = this.data.answerData.concat(res.data.answer)
         this.setData({
           topicData: res.data.topic,
-          answerData:res.data.answer,
-          editorId:editorId
+          answerData
         })
       }
+    })
+  },
+  // 触底事件
+  onReachBottom(){
+    let nowPage = this.data.nowPage + 10
+    let id = this.data.optionsId
+    this.setData({ nowPage })
+    this.getData(id)
+  },
+  // 点赞事件
+  handlePraise(e){
+    let index = e.detail
+    let answerData = this.data.answerData
+    answerData[index].active = !answerData[index].active
+    answerData[index].praise = Number(answerData[index].praise)+1
+    this.setData({
+      answerData: answerData
+    })
+  },
+  // 取消点赞事件
+  handleUnPraise(e){
+    let index = e.detail
+    let answerData = this.data.answerData
+    answerData[index].active = !answerData[index].active
+    answerData[index].praise = Number(answerData[index].praise) - 1
+    this.setData({
+      answerData: answerData
     })
   }
 })

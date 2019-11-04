@@ -10,36 +10,14 @@
     <view class="topic-handle">
       <view class="topic-see">{{topicData.pv}} 查看</view>
       <view>{{topicData.follow}} 关注</view>
-      <view class="topic-follow">关注话题</view>
+      <view class="topic-follow" bindtap="handleFollow">关注话题</view>
     </view>
   </view>
   <view class="answer-container">
     <view class="answer-number">共有 {{topicData.answer_num}} 个回答</view>
-    <view class="answer-list">
-      <view class="answer-item"
-        wx:for="{{answerData}}"
-        wx:key="{{item.id}}">
-        <view class="user-info">
-          <image class="user-info-avatar" src="{{item.avatar}}"></image>
-          <view class="user-info-name">{{item.nick_name}}</view>
-        </view>
-        <view class="answer-content">
-          <editor class="answer-text"
-          id="answer-editor-{{index}}"
-          read-only
-          bindready="onEditorReady"></editor>
-        </view>
-        <view class="answer-handle">
-          <view class="answer-reply">
-            <image class="reply-logo" src="../../image/reply.png"></image>
-            <view class="reply-number">{{item.replyTotal}}</view>
-          </view>
-          <view class="answer-reply">
-            <image class="reply-logo" src="../../image/praise.png"></image>
-            <view class="reply-number">{{item.praise}}</view>
-          </view>
-        </view>
-      </view>
-    </view>
+    <answer answerData="{{answerData}}" 
+    bindeventPraise="handlePraise"
+    bindeventUnPraise="handleUnPraise"></answer>
   </view>
+  <navigator class="send-answer" url="/pages/created/created?id={{topicData.id}}">发布回答</navigator>
 </view>

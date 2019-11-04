@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="handle">
+    <image class="handle-image" src="../../image/chooseImage.png" bindtap="chooseImage"></image>
+    <view class="handle-send" bindtap="sandAnswer">发布</view>
+  </view>
+  <view class="topic-title">{{topic_title}}</view>
+  <editor
+  id="editor"
+  bindready="onEditorReady"
+  placeholder="分享你的真实观点和经验，可以帮助到别的妈妈哦~"
+  class="create-editor"
+  bindinput='editorInput'>
+  </editor>
+</view>
