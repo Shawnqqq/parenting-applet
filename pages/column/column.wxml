@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="column-header">
+    <view class="column-title">{{columnData.title}}</view>
+    <view class="column-desc">{{columnData.desc}}</view>
+  </view>
+  <view class="column-list">
+    <navigator class="column-item"
+      wx:for="{{topicData}}"
+      wx:key="{{item.topic_id}}"
+      url="/pages/topic/topic?id={{item.topic_id}}">
+      <view class="column-index">
+        <text class="column-index-num">{{index+1}}</text>
+        <view class="column-index-shade"></view>
+      </view>
+      <view class="column-content">
+        <view class="column-text">{{item.title}}</view>
+        <view class="column-handle">
+          <navigator class="column-category" url="/pages/category/category?id={{item.category_id}}"># {{item.name}}</navigator>
+          <view class="column-pv">
+            <text class="column-pv-item">{{item.answer_num}} 回答</text>
+            <text class="column-pv-item">{{item.pv}} 浏览</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <view class="column-bottom">
+      已经滑倒底啦
+    </view>
+  </view>
+</view>

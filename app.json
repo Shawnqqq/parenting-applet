@@ -1,14 +1,20 @@
 {
   "pages": [
+    "pages/my/my",
+    "pages/my_status/my_status",
+    "pages/my_send/my_send",
+    "pages/my_collect/my_collect",
     "pages/index/index",
+    "pages/my_follow/my_follow",
+    "pages/column/column",
     "pages/created/created",
     "pages/category/category",
     "pages/answer/answer",
     "pages/topic/topic",
-    "pages/my/my",
     "pages/my_data/my_data",
     "components/topicItem/topicItem",
-    "components/answerItem/answerItem"
+    "components/answerItem/answerItem",
+    "pages/banner/banner"
   ],
   "window": {
     "backgroundTextStyle": "light",

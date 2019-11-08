@@ -13,44 +13,47 @@ App({
     this.login()
   },
   login: function(){
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: res => {
-              let userInfo = res.userInfo
-              this.globalData.userInfo = userInfo
-              wx.setStorageSync('userInfo', userInfo);
-              wx.login({
-                success: res => {
-                  if (res.code) {
-                    wx.request({
-                      url: API.login,
-                      method: 'POST',
-                      data: {
-                        code: res.code,
-                        userInfo: userInfo
-                      },
-                      success: res => {
-                        if (res.data.code !== 200) {
-                          console.log(res.data.message)
-                          return
+    return new Promise((resolve, reject)=>{
+      wx.getSetting({
+        success: res => {
+          if (res.authSetting['scope.userInfo']) {
+            wx.getUserInfo({
+              success: res => {
+                let userInfo = res.userInfo
+                this.globalData.userInfo = userInfo
+                wx.setStorageSync('userInfo', userInfo);
+                wx.login({
+                  success: res => {
+                    if (res.code) {
+                      wx.request({
+                        url: API.login,
+                        method: 'POST',
+                        data: {
+                          code: res.code,
+                          userInfo: userInfo
+                        },
+                        success: res => {
+                          if (res.data.code !== 200) {
+                            console.log(res.data.message)
+                            return
+                          }
+                          this.globalData.user_id = res.data.data
+                          wx.setStorageSync('user_id', res.data.data);
+                          resolve('success')
                         }
-                        this.globalData.user_id = res.data.data
-                        wx.setStorageSync('user_id', res.data.data);
-                      }
-                    })
-                  } else {
-                    console.log('登录失败！' + res.errMsg)
+                      })
+                    } else {
+                      console.log('登录失败！' + res.errMsg)
+                    }
                   }
-                }
-              })
-            }
-          })
-        } else {
-          console.log('用户未授权')
+                })
+              }
+            })
+          } else {
+            console.log('用户未授权')
+          }
         }
-      }
+      })
     })
   },
   globalData: {

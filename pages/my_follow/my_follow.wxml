@@ -1,0 +1,13 @@
+<view class="container">
+  <block wx:if="{{nullData}}">
+    <view class="nothing">
+      <view class="nothing-title">这里什么都没有</view>
+      <view class="nothing-desc">您还没有关注任何话题</view>
+    </view>
+  </block>
+  <block wx:else>
+    <scroll-view>
+      <topics topicData="{{topicData}}"></topics>
+    </scroll-view>
+  </block>
+</view>

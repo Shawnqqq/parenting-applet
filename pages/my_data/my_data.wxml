@@ -1,11 +1,11 @@
 <view class="container">
-  <view class="avatar">修改头像</view>
+  <view class="avatar" bindtap="handleAvatar">修改头像</view>
   <view class="my-item">
     <view class="my-item-title">昵称</view>
-    <view class="my-item-text">亚提密斯 ></view>
+    <view class="my-item-text">{{userInfo.nickName}} ></view>
   </view>
   <view class="my-item">
     <view class="my-item-title">性别</view>
-    <view class="my-item-text">男 ></view>
+    <view class="my-item-text">{{userInfo.gender===1? '男' : '女'}} ></view>
   </view>
 </view>

@@ -1,6 +1,6 @@
 <view class="container">
   <view class="topic-container">
-    <navigator class="category" url="/pages/category/category?id={{topicData.category_id}}">
+    <navigator class="category"  url="/pages/category/category?id={{topicData.category_id}}">
       <image class="category-logo" src="../../image/topic-select.png"></image>
       <view class="category-name">{{topicData.name}} ></view>
     </navigator>
@@ -19,5 +19,5 @@
     bindeventPraise="handlePraise"
     bindeventUnPraise="handleUnPraise"></answer>
   </view>
-  <navigator class="send-answer" url="/pages/created/created?id={{topicData.id}}">发布回答</navigator>
+  <navigator class="send-answer" open-type="redirect" url="/pages/created/created?id={{topicData.id}}">发布回答</navigator>
 </view>

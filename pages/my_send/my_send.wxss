@@ -1,0 +1,19 @@
+.container{
+  position: relative;
+  min-height: 100vh;
+}
+.nothing{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.nothing-title{
+  font-size: 34rpx;
+  color: #A9A9A9;
+}
+.nothing-desc{
+  font-size: 35rpx;
+  color: #D3D3D3;
+}

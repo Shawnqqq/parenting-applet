@@ -1,5 +1,6 @@
 .container{
   padding: 30rpx;
+  position: relative;
 }
 .user-info{
   display: flex;
@@ -53,4 +54,17 @@
 }
 .my-state{
   padding: 30rpx 0 0 15rpx;
+}
+.login{
+  position: absolute;
+  top: 50rpx;
+  right: 0;
+  font-size: 30rpx;
+  width: 250rpx;
+  height: 130rpx;
+  text-align: center;
+  line-height: 130rpx;
+  border-top-left-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
+  background-color: rgba(148, 112, 219, 0.4);
 }

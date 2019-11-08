@@ -6,20 +6,25 @@
     autoplay
     circular
     >
-    <swiper-item>
-      <view class="swiper-item"></view>
-    </swiper-item>
-    <swiper-item>
-      <view class="swiper-item two"></view>
+    <swiper-item
+      wx:for="{{bannerData}}"
+      wx:key="{{item.id}}">
+      <navigator class="swiper-item"
+        url="/pages/banner/banner?id={{item.id}}">
+        <image class="swiper-image" src="{{item.image_url}}"></image>
+      </navigator>
     </swiper-item>
   </swiper>
   <scroll-view class="album"
     scroll-x="true"
     enable-flex="true">
-    <view class="album-item">本周热议话题</view>
-    <navigator class="album-item" url="/pages/category/category?id=0">全部分类</navigator>
-    <view class="album-item">孕期必看话题</view>
-    <view class="album-item">巴拉巴拉</view>
+    <navigator class="album-item" 
+      wx:for="{{columnData}}"
+      wx:key="{{item.id}}"
+      url="/pages/column/column?id={{item.id}}">
+      <image src="{{item.image_url}}" class="album-image"></image>
+      <text class="album-text">{{item.title}}</text>
+    </navigator>
   </scroll-view>
   <view class="topic-container">
     <view class="topic-tab">

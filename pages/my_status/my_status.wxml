@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="title">欢迎来到羊臣羚</view>
+  <view class="desc">
+    <text>请先选择你的当前状态</text>
+    <text>立刻定制你的专属孕育计划</text>
+  </view>
+  <block wx:if="{{!state}}">
+    <view class="preparatio-item" bindtap="preparation">
+      <image class="item-image" src="../../image/preparation.png"></image>
+    </view>
+    <view class="preparatio-item" bindtap="pregnancy">
+      <image class="item-image" src="../../image/pregnancy.png"></image>
+    </view>
+    <view class="preparatio-item" bindtap="bred">
+      <image class="item-image" src="../../image/bred.png"></image>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="status">
+      <image class="item-image" src="{{status.image}}"></image>
+      <view class="text">{{status.text}}</view>
+      <view class="btn" bindtap="handleSumbit" data-state="{{status.state}}">完成</view>
+      <view class="return" bindtap="handleChange">更换状态</view>
+    </view>
+  </block>
+</view>
+ 

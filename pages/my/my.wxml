@@ -1,33 +1,38 @@
 <view class="container">
   <view class="user-info">
-    <image class="userInfo-image" src="{{userInfo.avatarUrl}}"></image>
-    <navigator class="userInfo-name" url="/pages/my_data/my_data?id={{user_id}}">{{userInfo.nickName}}
-      <image class="userInfo-edit" src="../../image/user-edit.png"></image>
-    </navigator>
+    <block wx:if="{{login}}">
+      <image class="userInfo-image" src="{{userInfo.avatarUrl}}"></image>
+      <navigator open-type="redirect" class="userInfo-name" url="/pages/my_data/my_data">{{userInfo.nickName}}
+        <image class="userInfo-edit" src="../../image/user-edit.png"></image>
+      </navigator>
+    </block>
+    <block wx:else>
+      <button open-type="getUserInfo" class="login" bindgetuserinfo="login">点击登录</button>
+    </block>
   </view>
   <view class="my-list">
-    <view class="my-item">
+    <navigator class="my-item" url="/pages/my_follow/my_follow">
       <image class="item-icon" src="../../image/topic-logo.png"></image>
       <view class="item-name">我关注的话题</view>
       <view class="item-arrow">></view>
-    </view>
-    <view class="my-item">
+    </navigator>
+    <navigator class="my-item" url="/pages/my_collect/my_collect">
       <image class="item-icon" src="../../image/star.png"></image>
       <view class="item-name">我收藏的回答</view>
       <view class="item-arrow">></view>
-    </view>
-    <view class="my-item">
+    </navigator>
+    <navigator class="my-item" url="/pages/my_send/my_send">
       <image class="item-icon" src="../../image/bubble.png"></image>
       <view class="item-name">我发布的回答</view>
       <view class="item-arrow">></view>
-    </view>
+    </navigator>
   </view>
   <view class="my-state">
-    <view class="my-item">
+    <navigator class="my-item"  url="/pages/my_status/my_status">
       <image class="item-icon" src="../../image/child.png"></image>
       <view class="item-name">孕育状态</view>
-      <view class="item-state">未添加</view>
+      <view class="item-state"></view>
       <view class="item-arrow">></view>
-    </view>
+    </navigator>
   </view>
 </view>

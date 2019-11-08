@@ -2,13 +2,14 @@
   <view class="topic-title">{{answerData.title}}</view>
   <view class="answer-handle">
     <navigator class="answer-all" url="/pages/topic/topic?id={{answerData.topic_id}}">全部 {{answerData.answer_num}} 条回答 ></navigator >
-    <navigator class="answer-send" url="/pages/created/created?id={{answerData.topic_id}}">发布回答</navigator>
+    <navigator class="answer-send" open-type="redirect" url="/pages/created/created?id={{answerData.topic_id}}">发布回答</navigator>
   </view>
   <view class="user-container">
     <image class="user-avatar" src="{{answerData.avatar}}"></image>
     <view class="user-name">{{answerData.nick_name}}</view>
   </view>
   <editor class="answer-text"
+    style="height:auto"
     id="editor-single"
     read-only 
     bindready="onEditorReady">

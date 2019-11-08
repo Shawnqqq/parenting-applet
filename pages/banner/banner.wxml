@@ -1,0 +1,3 @@
+<view class="container">
+  <image class="banner-image" mode="widthFix" src="{{bannerData.content}}"></image>
+</view>
