@@ -8,6 +8,9 @@ Page({
   },
   onLoad(){
     this.getData()
+    wx.showShareMenu({
+      withShareTicket: true
+    })
   },
   getData(){
     let userInfo = app.globalData.userInfo

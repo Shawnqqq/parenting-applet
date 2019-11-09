@@ -48,6 +48,9 @@ Page({
         })
       }
     })
+    wx.showShareMenu({
+      withShareTicket: true
+    })
   },
   handleRecomme(){
     this.setData({
