@@ -1,3 +1,8 @@
 <view class="container">
-  <image class="banner-image" mode="widthFix" src="{{bannerData.content}}"></image>
+  <editor class="answer-text"
+    style="height:auto"
+    id="editor-banner"
+    read-only 
+    bindready="onEditorReady">
+  </editor>
 </view>
