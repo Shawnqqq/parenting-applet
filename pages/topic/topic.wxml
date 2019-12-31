@@ -10,7 +10,7 @@
     <view class="topic-handle">
       <view class="topic-see">{{topicData.pv}} 查看</view>
       <view>{{topicData.follow}} 关注</view>
-      <view class="topic-follow" bindtap="handleFollow">关注话题</view>
+      <view class="topic-follow {{follow ? 'reple' : ''}}" bindtap="handleFollow">{{follow ? '已关注' : '关注话题'}}</view>
     </view>
   </view>
   <view class="answer-container">

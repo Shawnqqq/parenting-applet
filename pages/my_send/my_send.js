@@ -7,15 +7,17 @@ Page({
     answerData: [],
   },
   onLoad() {
-    let id = app.globalData.user_id
+    let id = app.globalData.user_id;
+    let nullData = this.data.nullData
     wx.request({
       url: API.wxUserSend + '/' + id,
       success: res => {
         res.data.data.forEach(data => {
           data.text ? data.text = data.text.replace(/<\/?.+?>/g, "") : ''
         })
+        res.data.data.length ? nullData = false : nullData = true
         this.setData({
-          nullData: false,
+          nullData,
           answerData: res.data.data
         })
       }

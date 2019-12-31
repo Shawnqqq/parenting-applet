@@ -60,6 +60,11 @@
   border-radius: 34rpx;
   border: 3rpx solid #FF855B;
 }
+.topic-follow.reple{
+  background-color: #DCDCDC;
+  border: 3rpx solid #999;
+  color: #555;
+}
 .answer-container{
   margin-bottom: 80rpx;
 }

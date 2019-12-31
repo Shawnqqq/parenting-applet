@@ -6,7 +6,8 @@ Page({
     topicData:{},
     answerData:[],
     nowPage:0,
-    optionsId:''
+    optionsId:'',
+    follow:false
   },
   onLoad: function (options) {
     this.handlePv(options.id)
@@ -57,7 +58,8 @@ Page({
         let answerData = this.data.answerData.concat(res.data.answer)
         this.setData({
           topicData: res.data.topic,
-          answerData
+          answerData,
+          follow:res.data.follow
         })
       }
     })
