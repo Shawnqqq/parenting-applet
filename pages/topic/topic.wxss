@@ -60,6 +60,9 @@
   border-radius: 34rpx;
   border: 3rpx solid #FF855B;
 }
+.answer-container{
+  margin-bottom: 80rpx;
+}
 .answer-number{
   height: 120rpx;
   padding-left: 30rpx;
@@ -117,7 +120,7 @@
 }
 .send-answer{
   position: fixed;
-  bottom: 7%;
+  bottom: 2%;
   left: 50%;
   transform: translateX(-50%);
   width: 75%;

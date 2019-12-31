@@ -1,7 +1,7 @@
 const MODE = 'devlopment'   //开发环境
 // const MODE = 'production'   //上线环境
 
-const DEVELOPMENT_PREFIX = 'http://192.168.31.27:3000/api';
+const DEVELOPMENT_PREFIX = 'http://localhost:3000/api';
 const PRODUCTION_PREFIX = 'https://www.production.com/api';
 
 const VERSION = 'V0.0.1';  //版本型号
